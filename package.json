@@ -1,8 +1,8 @@
 {
   "name": "youtube-dl-exec",
-  "description": "A simple Node.js wrapper for youtube-dl",
+  "description": "Promise-friendly Node.js wrapper around youtube-dl / yt-dlp for downloading media.",
   "homepage": "https://github.com/microlinkhq/youtube-dl-exec",
-  "version": "3.0.28",
+  "version": "3.1.19",
   "types": "src/index.d.ts",
   "main": "src/index.js",
   "author": {
@@ -22,6 +22,10 @@
     {
       "name": "EndChapter",
       "email": "edchapter@gmail.com"
+    },
+    {
+      "name": "Saekkkal",
+      "email": "saekkkal@saekkkal.dev"
     },
     {
       "name": "Skick",
@@ -50,6 +54,14 @@
     {
       "name": "akawahuynh",
       "email": "119006653+akawahuynh@users.noreply.github.com"
+    },
+    {
+      "name": "Mylloon",
+      "email": "29067904+Mylloon@users.noreply.github.com"
+    },
+    {
+      "name": "Morgân von Brylân",
+      "email": "33571779+MorganVonBrylan@users.noreply.github.com"
     },
     {
       "name": "Niels Swimberghe",
@@ -100,6 +112,10 @@
       "email": "jburke65@gatech.edu"
     },
     {
+      "name": "joergbirkhold",
+      "email": "joerg@liquidnight.de"
+    },
+    {
       "name": "Jiayang",
       "email": "joeysun6@gmail.com"
     },
@@ -144,23 +160,27 @@
     "url": "https://github.com/microlinkhq/youtube-dl-exec/issues"
   },
   "keywords": [
+    "audio",
     "binary",
-    "nodejs",
+    "download",
+    "exec",
+    "media",
+    "stream",
+    "video",
+    "wrapper",
     "youtube-dl",
-    "youtube-dl-wrapper",
-    "youtube-downloader"
+    "yt-dlp"
   ],
   "dependencies": {
-    "binary-version-check": "~6.1.0",
     "dargs": "~7.0.0",
     "debug-logfmt": "~1.4.0",
-    "tinyspawn": "~1.5.0"
+    "tinyspawn": "~1.5.10"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@ksmithut/prettier-standard": "latest",
-    "ava": "latest",
+    "@types/node": "latest",
+    "ava": "7",
     "c8": "latest",
     "ci-publish": "latest",
     "finepack": "latest",
@@ -186,7 +206,7 @@
     "lint": "standard && tsd",
     "postinstall": "node scripts/postinstall.js",
     "postrelease": "npm run release:tags && npm run release:github && (ci-publish || npm publish --access=public)",
-    "preinstall": "node scripts/preinstall.mjs",
+    "preinstall": "node scripts/preinstall.js",
     "pretest": "npm run lint",
     "release": "standard-version -a",
     "release:github": "github-generate-release",
@@ -195,7 +215,8 @@
   },
   "license": "MIT",
   "ava": {
-    "workerThreads": false
+    "workerThreads": false,
+    "concurrency": 1
   },
   "commitlint": {
     "extends": [
@@ -209,7 +230,7 @@
   },
   "nano-staged": {
     "*.js": [
-      "prettier-standard",
+      "npx @kikobeats/prettier-standard",
       "standard --fix"
     ],
     "package.json": [

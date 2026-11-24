@@ -14,29 +14,32 @@ const {
   YOUTUBE_DL_SKIP_DOWNLOAD
 } = require('../src/constants')
 
-const getOptions = () => {
-  return GITHUB_TOKEN
-    ? { headers: { Authorization: `Bearer ${GITHUB_TOKEN}` } }
-    : {}
-}
-
 const getLatest = ({ assets }) => {
   const { browser_download_url: url } = assets.find(
     ({ name }) => name === YOUTUBE_DL_FILE
   )
-  return fetch(url, getOptions())
+  return fetch(url)
+}
+
+const request = async url => {
+  if (!GITHUB_TOKEN) return fetch(url)
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${GITHUB_TOKEN}` }
+  })
+  if (response.status !== 401 && response.status !== 403) return response
+  debug('token rejected, retrying anonymously', { status: response.status })
+  return fetch(url)
 }
 
 const getBinary = async url => {
-  let response = await fetch(url, getOptions())
+  let response = await request(url)
+
   if (response.headers.get('content-type') !== 'application/octet-stream') {
     const payload = await response.json()
     if (!response.ok) throw new Error(JSON.stringify(payload, null, 2))
     response = await getLatest(payload)
   }
-  if (!response.ok) {
-    throw new Error(`Failed to download: ${response.statusText}`)
-  }
+
   return response.body
 }
 
@@ -52,11 +55,4 @@ const installBinary = async () => {
   debug({ status: 'success' })
 }
 
-if (YOUTUBE_DL_SKIP_DOWNLOAD) {
-  debug({ status: 'skipped' })
-} else {
-  installBinary().catch(err => {
-    console.error(err)
-    process.exit(1)
-  })
-}
+YOUTUBE_DL_SKIP_DOWNLOAD ? debug({ status: 'skipped' }) : installBinary()

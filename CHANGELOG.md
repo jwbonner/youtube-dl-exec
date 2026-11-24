@@ -2,6 +2,120 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 3.1.19 (2026-10-28)
+
+
+### Bug Fixes
+
+* require Python 3.11, matching the bundled yt-dlp ([#289](https://github.com/microlinkhq/youtube-dl-exec/issues/289)) ([c6c9d3e](https://github.com/microlinkhq/youtube-dl-exec/commit/c6c9d3eab3e60e6749261a5ff15de5bdbfba06a8))
+
+### 3.1.18 (2026-10-28)
+
+### 3.1.17 (2026-10-03)
+
+
+### Bug Fixes
+
+* type every yt-dlp flag ([#286](https://github.com/microlinkhq/youtube-dl-exec/issues/286)) ([cd43a8b](https://github.com/microlinkhq/youtube-dl-exec/commit/cd43a8bf368fd5508a73f3ae3bd05f6a017c6894)), closes [#285](https://github.com/microlinkhq/youtube-dl-exec/issues/285)
+
+### 3.1.16 (2026-10-03)
+
+
+### Bug Fixes
+
+* let preinstall pass on a fresh install ([#287](https://github.com/microlinkhq/youtube-dl-exec/issues/287)) ([10ad912](https://github.com/microlinkhq/youtube-dl-exec/commit/10ad9122f677e871e596ef70bf58d88ee83bb15e))
+
+### 3.1.15 (2026-09-05)
+
+
+### Bug Fixes
+
+* treat url as a positional after -- ([#284](https://github.com/microlinkhq/youtube-dl-exec/issues/284)) ([545d79f](https://github.com/microlinkhq/youtube-dl-exec/commit/545d79f2af794c27322e6dc86de3fcbff2bd857c))
+
+### 3.1.14 (2026-09-02)
+
+
+### Bug Fixes
+
+* spawn yt-dlp without a shell ([#283](https://github.com/microlinkhq/youtube-dl-exec/issues/283)) ([509ee03](https://github.com/microlinkhq/youtube-dl-exec/commit/509ee036190d3d35911965eedf35dc27dce26e3f)), closes [#270](https://github.com/microlinkhq/youtube-dl-exec/issues/270) [#270](https://github.com/microlinkhq/youtube-dl-exec/issues/270)
+
+### 3.1.13 (2026-08-26)
+
+
+### Bug Fixes
+
+* loosen video unavailable assertion ([143b289](https://github.com/microlinkhq/youtube-dl-exec/commit/143b289e5a655f68bba91e63b9e491e46cd0cb51))
+
+### 3.1.12 (2026-08-07)
+
+
+### Bug Fixes
+
+* try-catch when fetching data from gh with a bad token ([#282](https://github.com/microlinkhq/youtube-dl-exec/issues/282)) ([47e8ff5](https://github.com/microlinkhq/youtube-dl-exec/commit/47e8ff559da28d958542f28f728df4eb30898333))
+
+### 3.1.11 (2026-08-05)
+
+### 3.1.10 (2026-08-03)
+
+### 3.1.9 (2026-07-06)
+
+
+### Bug Fixes
+
+* pass authorization header to fetch in postinstall ([#278](https://github.com/microlinkhq/youtube-dl-exec/issues/278)) ([c4c6101](https://github.com/microlinkhq/youtube-dl-exec/commit/c4c6101e6579f76523bcc0a6a60532bd580e1242))
+
+### 3.1.8 (2026-06-18)
+
+### 3.1.7 (2026-05-16)
+
+
+### Bug Fixes
+
+* tests updated ([efc7cfd](https://github.com/microlinkhq/youtube-dl-exec/commit/efc7cfd04616c3c4954dc43b7ac2e96f81b799f3))
+
+### 3.1.6 (2026-05-04)
+
+### 3.1.5 (2026-04-14)
+
+### 3.1.4 (2026-03-17)
+
+### [3.1.3](https://github.com/microlinkhq/youtube-dl-exec/compare/v3.1.2...v3.1.3) (2026-02-25)
+
+### 3.1.2 (2026-02-23)
+
+
+### Bug Fixes
+
+* **types:** set binaryPath parameter as optional ([#269](https://github.com/microlinkhq/youtube-dl-exec/issues/269)) ([6351d25](https://github.com/microlinkhq/youtube-dl-exec/commit/6351d254853233d926daed4a2d2c8e3379797c66))
+
+### 3.1.1 (2026-02-09)
+
+
+### Bug Fixes
+
+* update command ([af56495](https://github.com/microlinkhq/youtube-dl-exec/commit/af56495014c41c21b7b0f25241a8fcd5c919af00))
+
+## 3.1.0 (2026-02-09)
+
+
+### Features
+
+* update function ([#267](https://github.com/microlinkhq/youtube-dl-exec/issues/267)) ([c302b9d](https://github.com/microlinkhq/youtube-dl-exec/commit/c302b9d51884cbd88b93f3a09c534aa0d570bb86))
+
+### 3.0.30 (2026-01-26)
+
+
+### Bug Fixes
+
+* **types:** add missing fields ([#266](https://github.com/microlinkhq/youtube-dl-exec/issues/266)) ([8baccee](https://github.com/microlinkhq/youtube-dl-exec/commit/8baccee502fe26663e593dbba798db698883bd15))
+
+### 3.0.29 (2026-01-11)
+
+
+### Bug Fixes
+
+* **types:** add missing fields ([#260](https://github.com/microlinkhq/youtube-dl-exec/issues/260)) ([2f301d6](https://github.com/microlinkhq/youtube-dl-exec/commit/2f301d60a8091471f086c353649bbe03985a4903))
+
 ### 3.0.28 (2025-12-22)
 
 ### 3.0.27 (2025-11-21)
