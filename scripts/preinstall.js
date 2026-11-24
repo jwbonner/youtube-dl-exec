@@ -6,7 +6,8 @@ const YT_DLP_PYTHON_BINARY = 'python3'
 
 const MINIMUM_PYTHON = { major: 3, minor: 11 }
 
-const isWindowsExecutableBundlingPython = process.platform === 'win32'
+const isExecutableBundlingPython =
+  process.platform === 'win32' || process.platform === 'darwin'
 
 const isSupportedPython = binary => {
   try {
@@ -26,7 +27,7 @@ const isSupportedPython = binary => {
 
 if (
   process.env.YOUTUBE_DL_SKIP_PYTHON_CHECK === undefined &&
-  !isWindowsExecutableBundlingPython &&
+  !isExecutableBundlingPython &&
   !isSupportedPython(YT_DLP_PYTHON_BINARY)
 ) {
   throw new Error(
